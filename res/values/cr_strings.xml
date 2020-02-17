@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="floko_settings_title">Todak</string>
+    <string name="floko_settings_title">TodakROM</string>
     <string name="crdroid_settings_summary">Customize UrSelf</string>
     <string name="crdroid_personalization_category">Personalization</string>
     <string name="crdroid_addons_category">Addons</string>
@@ -487,7 +487,7 @@
     <string name="status_bar_crdroid_logo_style">Logo style</string>
     <string name="status_bar_logo_position_right">Right</string>
     <string name="status_bar_logo_position_left">Left</string>
-    <string name="status_bar_logo_style_floko">Todak</string>
+    <string name="status_bar_logo_style_floko">TodakROM</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_ios">iOS</string>
@@ -1094,13 +1094,13 @@
     <string name="changelog_crdroid_error">Unable to load changelog</string>
 
     <!-- About FlokoROM -->
-    <string name="about_floko">About Todak</string>
+    <string name="about_floko">About TodakROM</string>
 
     <!-- Share FlokoROM -->
-    <string name="share_floko_title">Share Todak</string>
-    <string name="share_floko_summary">Let others know about Todak</string>
-    <string name="share_floko_message">Check out what #Todak is / https://todak.com/</string>
-    <string name="share_floko_chooser_title">Share Todak</string>
+    <string name="share_floko_title">Share TodakROM</string>
+    <string name="share_floko_summary">Let others know about TodakROM</string>
+    <string name="share_floko_message">Check out what #TodakROM is / https://todak.com/</string>
+    <string name="share_floko_chooser_title">Share TodakROM</string>
 
     <!-- Sites FlokoROM -->
     <string name="crdroid_source_title">GitHub</string>
@@ -1124,7 +1124,7 @@
     <!-- Donate FlokoROM -->
     <string name="donate_crdroid_title">Support us</string>
     <string name="donate_crdroid_summary">Donate to support development and our server</string>
-    <string name="donate_floko_team_title">Todak team</string>
+    <string name="donate_floko_team_title">TodakROM team</string>
     <string name="donate_team_summary">Donate to support build system and development</string>
 <!--
     <string name="donate_dev_title" translatable="false">hota (lindwurm)</string>
@@ -1723,7 +1723,7 @@
 
     <!-- Reset settings -->
     <string name="reset_settings_title">Reset settings</string>
-    <string name="reset_settings_message">This will reset most Todak settings to their default values for the current user. Would you like to continue?</string>
+    <string name="reset_settings_message">This will reset most TodakROM settings to their default values for the current user. Would you like to continue?</string>
 
     <!-- OTA -->
     <string name="ota_crdroid_title">Updates</string>
