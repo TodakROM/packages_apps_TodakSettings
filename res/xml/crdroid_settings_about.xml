@@ -45,12 +45,12 @@
         settings:allowDividerAbove="false" />
 -->
 
-    <!-- Floko Share -->
+    <!-- Todak Share -->
     <PreferenceScreen
         android:key="crdroid_share"
         android:icon="@drawable/ic_share"
-        android:title="@string/share_floko_title"
-        android:summary="@string/share_floko_summary"
+        android:title="@string/share_todak_title"
+        android:summary="@string/share_todak_summary"
         settings:allowDividerAbove="false" />
 
     <!-- crDroid Donate -->
