@@ -50,9 +50,9 @@ public class Donate extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mDonateTeam) {
-            launchUrl("https://floko.maud.io");
+            launchUrl("https://todak.com");
         } else if (preference == mDonateDev) {
-            launchUrl("https://floko.maud.io");
+            launchUrl("https://todak.com");
         }
 
         return super.onPreferenceTreeClick(preference);
