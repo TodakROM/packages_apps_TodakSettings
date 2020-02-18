@@ -16,8 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="floko_settings_title">TodakROM</string>
-    <string name="crdroid_settings_summary">Customize UrSelf</string>
+    <string name="todak_settings_title">Todak</string>
+    <string name="crdroid_settings_summary">Customize Everyting Here</string>
     <string name="crdroid_personalization_category">Personalization</string>
     <string name="crdroid_addons_category">Addons</string>
 
@@ -1093,16 +1093,16 @@
     <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
     <string name="changelog_crdroid_error">Unable to load changelog</string>
 
-    <!-- About FlokoROM -->
-    <string name="about_floko">About TodakROM</string>
+    <!-- About TodakROM -->
+    <string name="about_todak">About TodakROM</string>
 
-    <!-- Share FlokoROM -->
-    <string name="share_floko_title">Share TodakROM</string>
-    <string name="share_floko_summary">Let others know about TodakROM</string>
-    <string name="share_floko_message">Check out what #TodakROM is / https://todak.com/</string>
-    <string name="share_floko_chooser_title">Share TodakROM</string>
+    <!-- Share TodakROM -->
+    <string name="share_todak_title">Share TodakROM</string>
+    <string name="share_todak_summary">Let others know about TodakROM</string>
+    <string name="share_todak_message">Check out what #TodakROM is / https://todak.com/</string>
+    <string name="share_todak_chooser_title">Share TodakROM</string>
 
-    <!-- Sites FlokoROM -->
+    <!-- Sites TodakROM -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">We love open source, check us out</string>
     <string name="crdroid_website_title">Official website</string>
@@ -1121,7 +1121,7 @@
     <string name="maintainers_crdroid_summary">List of supported devices and their official maintainers</string>
     <string name="maintainers_crdroid_error">Unable to load devices and maintainers list</string>
 
-    <!-- Donate FlokoROM -->
+    <!-- Donate TodakROM -->
     <string name="donate_crdroid_title">Support us</string>
     <string name="donate_crdroid_summary">Donate to support development and our server</string>
     <string name="donate_floko_team_title">TodakROM team</string>
