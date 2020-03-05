@@ -42,6 +42,7 @@ import com.crdroid.settings.fragments.lockscreen.LockScreenVisualizer;
 import com.crdroid.settings.fragments.lockscreen.LockScreenWeather;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
+import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -53,6 +54,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String FACE_UNLOCK_PREF = "face_auto_unlock";
     private static final String FACE_UNLOCK_PACKAGE = "com.android.facelock";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
@@ -62,6 +64,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private SwitchPreference mFaceUnlock;
     private Preference mFingerprintVib;
     private Preference mWeatherSettings;
+    private SystemSettingSwitchPreference mFpKeystore;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,11 @@ public class LockScreen extends SettingsPreferenceFragment
         mFaceUnlock = (SwitchPreference) findPreference(FACE_UNLOCK_PREF);
         mFaceUnlock.setChecked(mFaceUnlockEnabled);
 
+        mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
+        mFpKeystore.setOnPreferenceChangeListener(this);
+        
         if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
             mFaceUnlock.setEnabled(false);
             mFaceUnlock.setSummary(getActivity().getString(
@@ -103,6 +111,12 @@ public class LockScreen extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        } else if (preference == mFpKeystore) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
