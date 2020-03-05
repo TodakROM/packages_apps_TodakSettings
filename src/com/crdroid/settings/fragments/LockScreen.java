@@ -111,7 +111,8 @@ public class LockScreen extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        } else if (preference == mFpKeystore) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mFpKeystore) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
