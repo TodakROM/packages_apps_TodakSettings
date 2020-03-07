@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
+import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.notifications.Ticker;
