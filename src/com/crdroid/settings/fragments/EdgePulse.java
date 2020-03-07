@@ -31,7 +31,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.colorpicker.ColorPickerPreference;
+import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 
 public class EdgePulse extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
