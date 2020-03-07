@@ -48,7 +48,6 @@
         android:summary="@string/doze_summary"
         android:persistent="false" />-->
 
-    <PreferenceCategory
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_title"                        
