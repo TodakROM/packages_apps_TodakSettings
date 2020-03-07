@@ -28,7 +28,7 @@
             android:defaultValue="true"
             android:disableDependentsState="true" />
 
-        <com.crdroid.settings.colorpicker.ColorPickerPreference
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
             android:key="pulse_ambient_light_color_left"
             android:title="@string/pulse_ambient_light_color_title"
             android:persistent="false"
@@ -55,7 +55,7 @@
             android:defaultValue="true"
             android:disableDependentsState="true" />
 
-        <com.crdroid.settings.colorpicker.ColorPickerPreference
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
             android:key="pulse_ambient_light_color_right"
             android:title="@string/pulse_ambient_light_color_title"
             android:persistent="false"
