@@ -56,7 +56,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
     private Preference mBatLights;
     private Preference mNotLights;
     private ListPreference mFlashlightOnCall;
-    private SystemSettingMasterSwitchPreference mEdgePulse;
+    private SystemSettingSwitchPreference mEdgePulse;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
         if (!Utils.deviceSupportsFlashLight(mContext))
             prefScreen.removePreference(mFlashlightOnCall);
 
-        mEdgePulse = (SystemSettingMasterSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
+        mEdgePulse = (SystemSettingSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
         mEdgePulse.setOnPreferenceChangeListener(this);
         int edgePulse = Settings.System.getInt(getContentResolver(),
                 PULSE_AMBIENT_LIGHT, 0);
