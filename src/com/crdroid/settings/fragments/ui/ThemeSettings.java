@@ -36,6 +36,7 @@ import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.AccentPicker;
@@ -43,6 +44,7 @@ import com.crdroid.settings.fragments.ui.AccentPicker;
 import java.util.List;
 import java.util.ArrayList;
 
+@SearchIndexable
 public class ThemeSettings extends SettingsPreferenceFragment implements Indexable,
         Preference.OnPreferenceChangeListener {
 
