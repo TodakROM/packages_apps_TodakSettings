@@ -36,9 +36,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
-import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
-
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.notifications.Ticker;
 
@@ -52,12 +49,10 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
-    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
 
     private Preference mBatLights;
     private Preference mNotLights;
     private ListPreference mFlashlightOnCall;
-    private SystemSettingSwitchPreference mEdgePulse;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,25 +79,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         if (!Utils.deviceSupportsFlashLight(mContext))
-            prefScreen.removePreference(mFlashlightOnCall);
-
-        mEdgePulse = (SystemSettingSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
-        mEdgePulse.setOnPreferenceChangeListener(this);
-        int edgePulse = Settings.System.getInt(getContentResolver(),
-                PULSE_AMBIENT_LIGHT, 0);
-        mEdgePulse.setChecked(edgePulse != 0);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mEdgePulse) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(getContentResolver(),
-		            PULSE_AMBIENT_LIGHT, value ? 1 : 0);
-            return true;
-        }
-        return false;
+            prefScreen.removePreference(mFlashlightOnCall);  
     }
 
     public static void reset(Context mContext) {
