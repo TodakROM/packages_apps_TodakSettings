@@ -79,7 +79,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         if (!Utils.deviceSupportsFlashLight(mContext))
-            prefScreen.removePreference(mFlashlightOnCall);  
+            prefScreen.removePreference(mFlashlightOnCall);
     }
 
     public static void reset(Context mContext) {
