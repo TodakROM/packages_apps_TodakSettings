@@ -2399,9 +2399,4 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string> 
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
-
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Edge lighting</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
 </resources>
