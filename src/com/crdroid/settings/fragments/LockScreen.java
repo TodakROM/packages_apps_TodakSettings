@@ -47,9 +47,6 @@ import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.crdroid.settings.preferences.Utils;
-import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
-
 import lineageos.providers.LineageSettings;
 
 public class LockScreen extends SettingsPreferenceFragment
@@ -63,15 +60,11 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_LOCK_SCREEN_WEATHER = "lock_screen_weather";
-    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
-    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
 
     private SwitchPreference mFaceUnlock;
     private Preference mFingerprintVib;
     private Preference mWeatherSettings;
     private SystemSettingSwitchPreference mFpKeystore;
-    private SystemSettingSeekBarPreference mClockFontSize;
-    private SystemSettingSeekBarPreference mDateFontSize;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,14 +86,14 @@ public class LockScreen extends SettingsPreferenceFragment
         mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
         mFpKeystore.setOnPreferenceChangeListener(this);
-
+        
         if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
             mFaceUnlock.setEnabled(false);
             mFaceUnlock.setSummary(getActivity().getString(
                     R.string.face_auto_unlock_not_available));
         }
 
-        FingerprintManager mFingerprintManager = (FingerprintManager)
+        FingerprintManager mFingerprintManager = (FingerprintManager) 
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
 
@@ -114,17 +107,6 @@ public class LockScreen extends SettingsPreferenceFragment
             mWeatherSettings.setSummary(getActivity().getString(
                     R.string.weather_client_not_available));
         }
-        // Lock Clock Size
-        mClockFontSize = (SystemSettingSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
-        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKCLOCK_FONT_SIZE, 64));
-        mClockFontSize.setOnPreferenceChangeListener(this);
-
-        // Lock Date Size
-        mDateFontSize = (SystemSettingSeekBarPreference) findPreference(DATE_FONT_SIZE);
-        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE,16));
-        mDateFontSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -134,16 +116,6 @@ public class LockScreen extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
-            return true;
-        } else if (preference == mClockFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
-            return true;
-        } else if (preference == mDateFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
             return true;
         }
         return false;

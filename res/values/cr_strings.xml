@@ -2399,9 +2399,4 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string> 
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
-
-    <!-- Lock Clock & Date Size -->
-    <string name="lockdate_font_size_title">Date font size</string>
-    <string name="lockclock_font_size_title">Clock font size</string>
-
 </resources>
