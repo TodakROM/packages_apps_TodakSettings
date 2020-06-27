@@ -52,6 +52,7 @@ public class Animations extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
@@ -60,6 +61,7 @@ public class Animations extends SettingsPreferenceFragment
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
     private ListPreference mScrollingCachePref;
+    private ListPreference mScreenOffAnimation;
 
     Toast mToast;
 
@@ -109,6 +111,13 @@ public class Animations extends SettingsPreferenceFragment
         mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
         mScrollingCachePref.setOnPreferenceChangeListener(this);
 
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffAnimation = Settings.Global.getInt(getContentResolver(),
+                Settings.Global.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
+        
         if (mToast != null) {
             mToast.cancel();
             mToast = null;
@@ -156,6 +165,12 @@ public class Animations extends SettingsPreferenceFragment
             int index = mScrollingCachePref.findIndexOfValue(value);
             SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, value);
             mScrollingCachePref.setSummary(mScrollingCachePref.getEntries()[index]);
+            return true;
+        } else if (preference == mScreenOffAnimation) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
+            Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
             return true;
         }
         return false;
