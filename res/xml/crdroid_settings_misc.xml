@@ -82,6 +82,12 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
+    <!-- FPS Info -->
+    <SwitchPreference
+        android:key="show_fps_info"
+        android:title="@string/show_fps_info"
+        android:summary="@string/show_fps_info_summary" />
+
     <!-- Gaming Mode -->
     <Preference
         android:key="gaming_mode"
