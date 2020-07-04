@@ -2135,6 +2135,7 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+<<<<<<< HEAD
 
     <!-- Edge light layout -->
     <string-array name="pulse_ambient_light_layout_entries">
@@ -2165,4 +2166,6 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+=======
+>>>>>>> parent of d2862e4... Add ambient pulse + changing + Edge layout
 </resources>

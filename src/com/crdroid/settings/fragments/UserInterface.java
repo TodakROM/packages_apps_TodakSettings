@@ -45,7 +45,7 @@ import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
-import com.crdroid.settings.fragments.ui.DozeSettings;
+import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.BlurPersonalizations;
 import com.crdroid.settings.fragments.ui.CutoutSettings;
 import com.crdroid.settings.fragments.ui.DozeFragment;
@@ -123,9 +123,10 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES, 0, UserHandle.USER_CURRENT);
         Animations.reset(mContext);
-        DozeSettings.reset(mContext);
+        DozeFragment.reset(mContext);        
         BlurPersonalizations.reset(mContext);
         CutoutSettings.reset(mContext);
+        DozeFragment.reset(mContext);
         RoundedCorners.reset(mContext);
         SmartPixels.reset(mContext);
         ThemeSettings.reset(mContext);
